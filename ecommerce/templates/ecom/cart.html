@@ -1,0 +1,151 @@
+
+{% load static %}
+{% block content %}
+
+
+<head>
+  <title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Product :: w3layouts</title>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <!--theme-style-->
+  <link href="{%  static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />	
+  <!--//theme-style-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--fonts-->
+  <link href="{% static 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' %}" rel='stylesheet' type='text/css'>
+  <!--//fonts-->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <!-- --- -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style media="screen">
+  .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+table, th,td {border: 1px solid black; border-collapse:collapse;
+ background-color: white;padding: 15px;}
+ .tables {margin-left: auto; margin-right: auto;}
+</style>
+
+</head>
+<script>
+function removecart(){
+
+	if(confirm('Remove the item from cart')==true){return true;}
+	else{return false;}
+}
+</script>
+
+  <script>
+  function logout(){
+
+    if(confirm('Do you want to logout')==true){return true;}
+    else{return false;}
+  }
+  </script>
+  {% include 'ecom/header.html' %}
+  <br> <br> <br>
+<div class="container" style="width:1300px;">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 style="text-align:center;" class="panel-title">My Cart</h6>
+    </div>
+    <table class="tables" id="dev-table" style="width:1300px;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Remove From Cart</th>
+
+        </tr>
+      </thead>
+      
+      {% for cart in cartlist %}
+     {% if cartlist %}
+     
+    
+
+     
+
+      <tr>
+       
+        <td>{{cart.name}}</td>
+        
+        <td> <img src="{% static cart.productimage %}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td>{{cart.totalprice}}</td>
+        <td>{{cart.quantity}}</td>
+        <td><a href="removecart/{{cart.cart_id}}" style="text-decoration: none;" onclick="return removecart()">Remove</a></td>
+      
+
+      </tr>
+      
+     
+      {% else %}
+      <br><br><br>
+      <h1>no products</h1>
+      
+      {% endif %}
+      
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<br><br><br>
+<div style="text-align: center; margin-top: -40px;">
+  <button class="button button2">Total : {{amount}}</button>
+  <a href="/locationtype"><button class="button" ><span>Purchase </span></button></a>
+</div>
+
+
+<br><br><br><br><br>
+{% endblock content %}
