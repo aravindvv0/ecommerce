@@ -52,7 +52,7 @@ firebaseConfig = {
 firebase=pyrebase.initialize_app(firebaseConfig)
 authe = firebase.auth()
 
-
+##githubtrail
 
 
 def trail(request):
