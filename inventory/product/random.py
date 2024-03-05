@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
-from django.contrib.auth import authenticate
+# from django.contrib.auth import authenticate
 from rest_framework.authentication import TokenAuthentication
 
 def maketoken(request):
