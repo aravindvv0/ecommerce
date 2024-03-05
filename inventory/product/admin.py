@@ -3,7 +3,7 @@ from .models import Product,Category,Brand,Inventory
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
-    fields = ["productname","produc,_image","price","catid","brandid"]
+    fields = ["productname","product_image","price","catid","brandid"]
 
 class InventoryAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
