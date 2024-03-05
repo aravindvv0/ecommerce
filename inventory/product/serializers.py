@@ -2,7 +2,7 @@ from rest_framework import serializers
 import django_filters
 from .models import Product,Inventory
 from django.contrib.auth.models import User
-
+print("remote changes")
 class ProductSerialaizer(serializers.ModelSerializer):
     class Meta:
         model = Product
