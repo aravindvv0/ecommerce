@@ -1,4 +1,4 @@
-from django.http import JsonResponse,HttpResponse
+#from django.http import JsonResponse,HttpResponse
 from .models import Product,Category,Brand,Inventory
 from .serializers import ProductSerialaizer,InventorySerializer,InventoryFilter,InventorySerializerWithProduct
 from rest_framework.decorators import api_view,permission_classes
