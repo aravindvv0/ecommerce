@@ -1,5 +1,5 @@
 from rest_framework import permissions
-
+print("hai")
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
     Custom permission to only allow owners of an object to view/edit it.

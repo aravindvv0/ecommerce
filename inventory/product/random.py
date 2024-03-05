@@ -6,11 +6,11 @@ from rest_framework.response import Response
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from django.contrib.auth.models import User
-# from rest_framework.authtoken.models import Token
-# from rest_framework.views import APIView
-# from django.contrib.auth import authenticate
-# from rest_framework.authentication import TokenAuthentication
-print("remote changes")
+from rest_framework.authtoken.models import Token
+from rest_framework.views import APIView
+from django.contrib.auth import authenticate
+from rest_framework.authentication import TokenAuthentication
+
 def maketoken(request):
         admin_user = User.objects.get(username='admin')
         print(admin_user)
@@ -18,6 +18,7 @@ def maketoken(request):
         token, created = Token.objects.get_or_create(user = admin_user)
 
         # Retrieve the token key
+        print(token.key)
         print(token.key)
         return HttpResponse("cool")
 
