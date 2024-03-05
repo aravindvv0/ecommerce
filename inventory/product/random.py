@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 # from rest_framework.views import APIView
 # from django.contrib.auth import authenticate
 # from rest_framework.authentication import TokenAuthentication
-
+print("remote changes")
 def maketoken(request):
         admin_user = User.objects.get(username='admin')
         print(admin_user)
